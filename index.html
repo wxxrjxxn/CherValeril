@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="icon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valeril</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #080011, #100022, #25004e);
+            color: #ffffff;
+        }
+
+        .preloader {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: opacity 1s ease-out, visibility 1s ease-out;
+        }
+
+        .preloader.hide {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 0;
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+        }
+
+        header img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            border: 3px solid #ffffff;
+        }
+
+        .loading-text {
+            font-size: 3rem;
+            font-weight: bold;
+            letter-spacing: 5px;
+            text-shadow: 0 0 10px #9900ff, 0 0 20px #9900ff;
+            font-family: 'Orbitron', sans-serif;
+            animation: fadeIn 1.6s ease-in-out, flicker 1.5s infinite alternate;
+        }
+
+        @keyframes flicker {
+            0% { opacity: 1; }
+            50% { opacity: 0.0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header h1 {
+            margin-top: 20px;
+            font-size: 2.5em;
+            font-weight: bold;
+            color:rgba(132, 0, 255, 0.678)
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 20px;
+            background: rgba(0, 0, 0, 0);
+            padding: 10px 0;
+            box-shadow: 0 8px 8px rgba(0, 0, 0, 0.521);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        nav a {
+            color: #b97cff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+            font-weight: bold;
+                .punkt-button {
+                    margin-top: 10px;
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #180624, #1f0849, #2e0858);
+            color: #bb5cfa;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s, background 0.3s;
+            width: 30%;
+            }
+
+                .punkt-button:hover {
+                    transform: scale(1.08);
+                }
+
+                .punkt-button:active {
+                    transform: scale(1.05);
+                }
+        }
+
+        nav a:hover {
+            text-decoration: none;
+        }
+
+        section {
+            padding: 50px 20px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2em;
+            border-bottom: 2px solid #ffffff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        section p {
+            text-align: center;
+            font-size: 18px;
+        }
+
+        section h3 {
+            text-align: center;
+        }
+
+        img {
+            border-radius: 10px;
+        }
+
+        section img {
+            width: 160px;
+            height: auto;
+            margin-right: 10px;
+            
+        }
+
+        .punkt-button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #220933, #2b0a68, #480396);
+            color: #bb5cfa;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s, background 0.3s;
+            width: 30%;
+        }
+
+        .punkt-button:hover {
+            transform: scale(1.08);
+        }
+
+        .punkt-button:active {
+            transform: scale(1.05);
+        }
+
+        img {
+            width: 150px;
+            height: 150px;
+            margin: 10px;
+            border-radius: 10px;
+            border: 2px solid #ffffff;
+            transition: transform 0.3s;
+        }
+
+        img:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="preloader">
+        <div class="loading-text">LOADING...</div>
+    </div>
+    <header>
+        <img src="avatar.jpg" alt="avatar">
+        <h1>Valeril</h1>
+    </header>
+    <nav>
+        <a href="#about"><button class="punkt-button">О себе</button></a><a href="#portfolio"><button class="punkt-button">Портфолио</button></a><a href="#contacts"><button class="punkt-button">Контакты</button></a>
+    </nav>
+    <section id="about">
+        <h2>О себе</h2>
+        <h3>Привет, я Лера!</h3>
+        <p>Я художник, как в диджитал так и в традиционном рисовании.</p>
+        <p>Через 4 года будет художественное образование.</p>
+        <p>Беру заказы, выставляю адоптов и всякие конкурсы в тг! Цены только в гривнах.</p>
+        <p>Помимо рисования я занимаюсь бисером да и в прочем всё что про творчество.</p>
+        <p>Собираюсь завести больше соцсетей.</p>
+    </section>
+    <section id="portfolio">
+        <h2>Портфолио</h2>
+        <img src="portfolio1.jpg"><img src="portfolio2.jpg"><img src="portfolio3.jpg"><img src="portfolio4.jpg"><img src="portfolio5.jpg">
+    </section>
+    <section id="contacts">
+        <h2>Контакты</h2>
+        <p><a href="t.me/WalernegaART"><button class="punkt-button">ТГК</button></a></p>
+    </section>
+    <footer>
+        <p>Made by <a href="https://t.me/self_realizing">M!ND/BREAK</a>. 2024.</p>
+        <p>Order sites here ^w^</p>
+    </footer>
+    <script>
+        setTimeout(() => {
+            document.querySelector('.preloader').classList.add('hide');
+            document.querySelector('.content').style.display = 'block';
+        }, 2000);
+    </script>
+</body>
+</html>
